@@ -30,9 +30,9 @@
 		
 		//plot data points
 		const data = await d3.csv("https://raw.githubusercontent.com/lynn0032/sci_vis/master/bc_data.csv");
-		window.points = d3.select('svg').append("g").attr("transform", "translate(100, 100)").selectAll('circle').data(data).enter().append('circle')
-			.attr("cx", function(d){return 30*parseFloat(d.pc1);})
-			.attr("cy",function(d){return 30*parseFloat(d.pc2);})
+		window.points = d3.select('svg').append("g").attr("transform", "translate(300, 300)").selectAll('circle').data(data).enter().append('circle')
+			.attr("cx", function(d){return 25*parseFloat(d.pc1);})
+			.attr("cy",function(d){return 25*parseFloat(d.pc2);})
 			.style("fill", function(d){if (d.diagnosis=="B") {return "blue";} else {return "orange";}})
 			.attr("r", 5).style("fill-opacity", ".5");
         
