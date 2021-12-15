@@ -15,7 +15,7 @@
 			<li>Those \(k\) labeled data points "vote" on which label to give the new point</li>
 			<li>The new point is labeled with the most frequent label amongst the neighbors</li>
 	</ul></p>
-	<p> About the data breast cancer </p>
+	<p> About the data breast cancer HI!</p>
   
   <svg width=960 height=500>
 	  
@@ -27,34 +27,26 @@
 	
 <script>
 	function draw_axes(){
-		//code in this function is adapted from: https://www.d3-graph-gallery.com/graph/custom_axis.html
+		//code in this function is adapted from: https://www.tutorialsteacher.com/d3js/axes-in-d3
 		
-		// set the dimensions and margins of the graph
-		var margin = {top: 20, right: 20, bottom: 40, left: 60},
-    			width = 460 - margin.left - margin.right,
-    			height = 400 - margin.top - margin.bottom;
+		var width = 400, height = 100;
 
-		// create svg element, respecting margins
-		var svg = d3.select("#title")
-  			.append("svg")
-    			.attr("width", width + margin.left + margin.right)
-    			.attr("height", height + margin.top + margin.bottom)
-  			.append("g")
-    			.attr("transform","translate(" + margin.left + "," + margin.top + ")");
+		var data = [10, 15, 20, 25, 30];
+		var svg = d3.select("body").append("svg").attr("width", width).attr("height", height);
 
-		// Add X axis
-		var x = d3.scaleLinear().domain([0, 100]).range([0, width]);
-		svg.append("g").attr("transform", "translate(0," + height + ")").call(d3.axisBottom(x));
+		var xscale = d3.scaleLinear().domain([0, d3.max(data)]).range([0, width - 100]);
 
-		// Add Y axis
-		var y = d3.scaleLinear().domain([0, 100]).range([ height, 0]);
-		svg.append("g").call(d3.axisLeft(y));
+		var yscale = d3.scaleLinear().domain([0, d3.max(data)]).range([height/2, 0]);
 
-		// Add X axis label:
-		svg.append("text").attr("text-anchor", "end").attr("x", width).attr("y", height + margin.top + 20).text("X");
+		var x_axis = d3.axisBottom().scale(xscale);
 
-		// Y axis label:
-		svg.append("text").attr("text-anchor", "end").attr("transform", "rotate(-90)").attr("y", -margin.left+20).attr("x", -margin.top).text("Y");
+		var y_axis = d3.axisLeft().scale(yscale);
+
+    		svg.append("g").attr("transform", "translate(50, 10)").call(y_axis);
+
+		var xAxisTranslate = height/2 + 10;
+
+    		svg.append("g").attr("transform", "translate(50, " + xAxisTranslate  +")").call(x_axis);
 
 	}
 	
