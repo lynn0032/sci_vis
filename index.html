@@ -13,7 +13,7 @@
 		<ul>
 			<li>Find the \(k\) labeled data points which are closest to the new point</li>
 			<li>Those \(k\) labeled data points "vote" on which label to give the new point</li>
-			<li>The new point is labeled with the most frequent label amongst the neighbors HI!</li>
+			<li>The new point is labeled with the most frequent label amongst the neighbors</li>
 	</ul></p>
   
   <svg width=960 height=500>
@@ -28,10 +28,10 @@
 	async function init(){
 		const data = await d3.csv("https://raw.githubusercontent.com/lynn0032/sci_vis/master/versicolor_virginica.csv");
 		window.points = d3.select('svg').append("g").attr("transform", "translate(0, 0)").selectAll('circle').data(data).enter().append('circle')
-			.attr("cx", function(d){return 100*parseFloat(d.sepal_length);})
-			.attr("cy",function(d){return 100*parseFloat(d.sepal_width);})
-			.style("fill", function(d){if(d.species=="versicolor"){return "blue";}else{return "orange";}})
-			.attr("r", .5).style("fill-opacity", ".5");
+			.attr("cx", function(d){return 10*parseFloat(d.sepal_length);})
+			.attr("cy",function(d){return 10*parseFloat(d.sepal_width);})
+			.style("fill", function(d){if (d.species=="versicolor") {return "blue";} else {return "orange";}})
+			.attr("r", 1).style("fill-opacity", ".5");
         
 	}
 	
