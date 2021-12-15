@@ -29,14 +29,15 @@
 	function draw_axes(){
 		//code in this function is adapted from: https://www.tutorialsteacher.com/d3js/axes-in-d3
 		
-		var width = 400, height = 100;
+		var width = 1000, height = 500;
 
-		var data = [10, 15, 20, 25, 30];
 		var svg = d3.select("body").append("svg").attr("width", width).attr("height", height);
 
-		var xscale = d3.scaleLinear().domain([0, d3.max(data)]).range([0, width - 100]);
+		var x_ticks = [-6, -4, -2, 0, 2, 4, 6, 8, 10, 12, 14, 16, 18];
+		var xscale = d3.scaleLinear().domain([d3.min(x_ticks), d3.max(x_ticks)]).range([0, width]);
 
-		var yscale = d3.scaleLinear().domain([0, d3.max(data)]).range([height/2, 0]);
+		var y_ticks = [-8, -6, -4, -2, 0, 2, 4, 6, 8, 10, 12, 14];
+		var yscale = d3.scaleLinear().domain([d3.min(y_ticks), d3.max(y_ticks)]).range([height, 0]);
 
 		var x_axis = d3.axisBottom().scale(xscale);
 
