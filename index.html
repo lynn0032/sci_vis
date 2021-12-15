@@ -29,9 +29,9 @@
 	function draw_axes(){
 		//code in this function is adapted from: https://www.tutorialsteacher.com/d3js/axes-in-d3
 		
-		var width = 600, height = 550;
+		var width = 480, height = 440;
 
-		var svg = d3.select("body").append("svg").attr("width", width).attr("height", height);
+		var svg = d3.select('svg');
 
 		var x_ticks = [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24];
 		var xscale = d3.scaleLinear().domain([d3.min(x_ticks), d3.max(x_ticks)]).range([0, 9*width/10]);
@@ -58,8 +58,8 @@
 		//plot data points
 		const data = await d3.csv("https://raw.githubusercontent.com/lynn0032/sci_vis/master/bc_data.csv");
 		window.points = d3.select('svg').append("g").attr("transform", "translate(50, 10)").selectAll('circle').data(data).enter().append('circle')
-			.attr("cx", function(d){return 25*(parseFloat(d.pc1)+6);})
-			.attr("cy",function(d){return 25*(parseFloat(d.pc2)+8);})
+			.attr("cx", function(d){return 20*(parseFloat(d.pc1)+6);})
+			.attr("cy",function(d){return 440-20*(parseFloat(d.pc2)+8);})
 			.style("fill", function(d){if (d.diagnosis=="B") {return "blue";} else {return "orange";}})
 			.attr("r", 5).style("fill-opacity", ".5");
         
