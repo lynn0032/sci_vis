@@ -58,8 +58,8 @@
 		//plot data points
 		const data = await d3.csv("https://raw.githubusercontent.com/lynn0032/sci_vis/master/bc_data.csv");
 		window.points = d3.select('svg').append("g").attr("transform", "translate(50, 80)").selectAll('circle').data(data).enter().append('circle')
-			.attr("cx", function(d){return 20*(parseFloat(d.pc1)+6);})
-			.attr("cy",function(d){return 396-20*(parseFloat(d.pc2)+8);})
+			.attr("cx", function(d){return 18*(parseFloat(d.pc1)+6);})
+			.attr("cy",function(d){return 396-18*(parseFloat(d.pc2)+8);})
 			.style("fill", function(d){if (d.diagnosis=="B") {return "blue";} else {return "orange";}})
 			.attr("r", 3).style("fill-opacity", ".5");
         
