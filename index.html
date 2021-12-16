@@ -52,10 +52,14 @@
 	}
 	
 	function make_legend(){
-		window.legend = d3.select("body").append("div").style("position", "absolute").style("visibility", "visible").style("left", "750px").style("top", "400px").style("border", "solid").style("border-width", "1px").style("border-radius", "5px").style("padding", "5px").style("font-family", "Verdana").style("font-size", "11");
-		window.legend_circle = d3.select('svg').append('circle').attr("cx", "757").attr("cy", "457").attr("r", "5");
-		legend.html("The area of each point is proportional <br>to the total number of COVID <br>cases per capita in the county. <br><br>&nbsp&nbsp&nbsp&nbsp is 1 case per 40 people.");
-		legend_circle.style("fill", "red").style("fill-opacity", ".25");
+		window.legend = d3.select("body").append("div").attr("transform", "translate(-200, 200)").style("position", "absolute").style("visibility", "visible")
+			.style("left", "750px").style("top", "400px").style("border", "solid").style("border-width", "1px")
+			.style("border-radius", "5px").style("padding", "5px").style("font-family", "Verdana").style("font-size", "11");
+		window.legend_circle1 = d3.select('svg').append('circle').attr("cx", "757").attr("cy", "457").attr("r", "5");
+		window.legend_circle2 = d3.select('svg').append('circle').attr("cx", "757").attr("cy", "467").attr("r", "5");
+		legend.html("&nbsp&nbsp&nbsp&nbsp Malignant Tumor<br><br>&nbsp&nbsp&nbsp&nbsp Benign Tumor");
+		legend_circle1.style("fill", "orange").style("fill-opacity", ".5");
+		legend_circl2e.style("fill", "blue").style("fill-opacity", ".5");
 	}
 	
 	async function init(){
