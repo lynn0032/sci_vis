@@ -62,6 +62,15 @@
 		legend_circle2.style("fill", "blue").style("fill-opacity", ".5");
 	}
 	
+	function classification(letter){
+		if (letter == "M") {return "Malignant";}
+		else {return "Benign";}
+	}
+	
+	function tooltip_text(d){
+		tooltip.html("Coordinates: (" + d['pc1'] + "," + d['pc2'] + ") <br> Classification: " + classification(d['diagnosis']));
+	}
+	
 	async function init(){
 		
 		draw_axes();
@@ -74,6 +83,18 @@
 			.attr("cy",function(d){return 396-18*(parseFloat(d.pc2)+8);})
 			.style("fill", function(d){if (d.diagnosis=="B") {return "blue";} else {return "orange";}})
 			.attr("r", 3).style("fill-opacity", ".5");
+		
+		//tooltip
+		window.tooltip = d3.select("body").append("div").attr("class", "tooltip").style("position", "absolute")
+			.style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px")
+			.style("border-radius", "5px").style("padding", "10px");
+		points.on("mouseover", function(d){
+			d3.select(this).style("stroke", "black").style("stroke-opacity", "1");
+		tooltip_text(d);
+		tooltip.style("visibility", "visible").style("left", (d3.event.pageX) + "px").style("top", (d3.event.pageY) + "px");});
+		points.on("mouseout", function(){
+			d3.select(this).style("stroke-opacity", "0");
+			tooltip.style("visibility", "hidden");});
         
 	}
 	
