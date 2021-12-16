@@ -79,14 +79,9 @@
 		make_legend();
 		
 		//slider
-		var display_k = d3.select("body").append("div").style("position", "absolute").style("visibility", "visible")
-			.style("background-color", "white").html(k).style("left", (50+date*1.65) + "px").style("top", "100px");
-		var slider = d3.sliderHorizontal().min(23).max(207).step(1).width(300).ticks(0).displayValue(false).value(207)
-			.on('onchange', (val) => {
-      				k = d3.format('.1f')(val);
-				display_k.html(k).style("left", (50+date*1.65) + "px");
-    		});
-	d3.select('svg').append('g').attr('transform', 'translate(100,80)').call(slider);
+		var slider = d3.sliderHorizontal().min(1).max(569).step(1).width(300).ticks(0).displayValue(true).value(1)
+			.on('onchange', (val) => { k = d3.format('.1f')(val);});
+		d3.select('svg').append('g').attr('transform', 'translate(100,80)').call(slider);
 		
 		//plot data points
 		const data = await d3.csv("https://raw.githubusercontent.com/lynn0032/sci_vis/master/bc_data.csv");
