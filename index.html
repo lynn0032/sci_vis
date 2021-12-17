@@ -82,6 +82,7 @@
 		points.sort(function(a,b){
 			return distance(parseFloat(a.pc1), parseFloat(a.pc2), actual_x, actual_y) - distance(parseFloat(b.pc1), parseFloat(b.pc2), actual_x, actual_y);
 		});
+		points.style("fill-opacity", ".25")
 		
 		d3.select('svg').append("text").text(String(actual_x) + " " + String(actual_y)).attr('transform', 'translate(50,50)');
 	}
