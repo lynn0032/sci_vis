@@ -74,8 +74,8 @@
 	}
 	
 	function place_new_point(x, y){
-		var new_point = d3.select('svg').append("circle").attr("cx", x).attr("cy", y).attr("r", "3")
-			.style("fill", "black").style("fill-opacity", ".75").text(String(distance(x,y,0,0)));
+		var new_point = d3.select('svg').append("circle").attr("cx", x).attr("cy", y).attr("r", "50")
+			.style("fill", "black").style("fill-opacity", "0").text(String(distance(x,y,0,0)));
 	}
 	
 	function make_background(){
