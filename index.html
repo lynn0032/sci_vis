@@ -74,7 +74,7 @@
 			.style("border-radius", "5px").style("padding", "5px").style("font-family", "Verdana").style("font-size", "11");
 		if (m_neighbors >= b_neighbors) {classification = "Malignant";}
 		else {classification = "Benign";}
-		votes.html("New point: (" + String(actual_x) + ", " + String(actual_y)
+		votes.html("New point: (" + String(actual_x).slice(0,5) + ", " + String(actual_y).slice(0,5) + ")"
 			   + "<br> Malignant neighbors: " + String(m_neighbors) 
 			   + "<br> Benign neighbors: " + String(b_neighbors) 
 			   + "<br> Classifcation: " + classification);
