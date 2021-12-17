@@ -120,7 +120,7 @@
 		//assume points are already sorted
 		m_neighbors = '0';
 		b_neighbors = '0';
-		points.style("stroke", "black").style("fill-opacity", function (d,i) {
+		points.style("fill-opacity", function (d,i) {
 			if (i < k) {
 				if (d.diagnosis == "B") {b_neighbors++;}
 				else {m_neighbors++;}
