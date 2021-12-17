@@ -189,7 +189,7 @@
 		window.reset_button = d3.select("body").append("div").style("position", "absolute").style("visibility", "hidden")
 			.style("left", "500px").style("top", "575px").style("border", "solid").style("border-width", "1px")
 			.style("border-radius", "5px").style("padding", "5px").style("font-family", "Verdana").style("font-size", "14")
-			.html("Reset").on("click", reset());
+			.html("Reset");
 		
 		//tooltip
 		window.tooltip = d3.select("body").append("div").attr("class", "tooltip").style("position", "absolute")
