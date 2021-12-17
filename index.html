@@ -119,7 +119,9 @@
 		
 		//slider
 		var slider = d3.sliderHorizontal().min(1).max(569).step(1).width(300).ticks(0).displayValue(true).value(1)
-			.on('onchange', (val) => { k = d3.format('.1f')(val);});
+			.on('onchange', function(val){ 
+				k = d3.format('.1f')(val); 
+				k_nearest();});
 		d3.select('svg').append('g').attr('transform', 'translate(550,80)').call(slider);
 		
 		make_background();
