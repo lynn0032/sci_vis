@@ -137,6 +137,9 @@
 		make_legend();
 		
 		//slider
+		d3.select("body").append("div").style("position", "absolute").style("left", "550px").style("top", "50px")
+			.style("font-family", "Verdana").style("font-size", "14")
+			.html("Select value of k");
 		var slider = d3.sliderHorizontal().min(1).max(569).step(1).width(300).ticks(0).displayValue(true).value(1)
 			.on('onchange', function(val){ 
 				k = d3.format('.1f')(val); 
@@ -171,6 +174,9 @@
 			.style("fill", "black").style("fill-opacity", "0");
 		
 		//display votes, hidden for now
+		d3.select("body").append("div").style("position", "absolute").style("left", "550px").style("top", "400px")
+			.style("font-family", "Verdana").style("font-size", "14")
+			.html("Click on the plot to place and classify a new datapoint");
 		window.votes = d3.select("body").append("div").style("position", "absolute").style("visibility", "hidden")
 			.style("left", "500px").style("top", "450px").style("border", "solid").style("border-width", "1px")
 			.style("border-radius", "5px").style("padding", "5px").style("font-family", "Verdana").style("font-size", "14");
