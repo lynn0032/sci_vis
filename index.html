@@ -133,7 +133,7 @@
 			.attr("r", 3).style("fill-opacity", ".5");
 		
 		//make new point, hidden for now
-		var new_point = d3.select('svg').append("circle").attr("cx", 0).attr("cy", 0).attr("r", "3")
+		window.new_point = d3.select('svg').append("circle").attr("cx", 0).attr("cy", 0).attr("r", "3")
 			.style("fill", "black").style("fill-opacity", "0");
 		
 		//tooltip
