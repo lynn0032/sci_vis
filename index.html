@@ -90,12 +90,12 @@
 	}
 	
 	function make_legend(){
-		d3.select("svg").append("rect").attr("x","500").attr("y","400").attr("width","100").attr("height","50")
+		d3.select("svg").append("rect").attr("x","500").attr("y","400").attr("width","150").attr("height","50")
 			.style("stroke-width", "1").style("stroke","black").style("fill-opacity","0");
 		d3.select("svg").append("text").attr("x","520").attr("y","420")
 			.text("Malignant Tumor");
 		d3.select("svg").append("text").attr("x","520").attr("y","440")
-			.text("Malignant Tumor");
+			.text("Benign Tumor");
 		/*window.legend = d3.select("body").append("div").style("position", "absolute").style("visibility", "visible")
 			.style("left", "500px").style("top", "650px").style("border", "solid").style("border-width", "1px")
 			.style("border-radius", "5px").style("padding", "5px").style("font-family", "Verdana").style("font-size", "14");*/
