@@ -84,8 +84,6 @@
 			return distance(parseFloat(a.pc1) + 6.0, parseFloat(a.pc2) + 8.0, actual_x, actual_y) - distance(parseFloat(b.pc1) + 6.0, parseFloat(b.pc2) + 8.0, actual_x, actual_y);
 		});
 		k_nearest();
-		
-		d3.select('svg').append("text").text(String(actual_x) + " " + String(actual_y)).attr('transform', 'translate(50,50)');
 	}
 	
 	function make_background(){
