@@ -72,11 +72,11 @@
 	
 	function display_votes(){
 		votes.style("visibility", "visible")
-		if (m_neighbors >= b_neighbors) {classification = "Malignant";}
-		else {classification = "Benign";}
+		if (m_neighbors >= b_neighbors) {classification = "<span style='color:#FFA500'>Malignant</span>";}
+		else {classification = "<span style='color:#0000FF'>Benign</span>";}
 		votes.html("New point: (" + String(actual_x).slice(0,5) + ", " + String(actual_y).slice(0,5) + ")"
 			   + "<br> Malignant neighbors: <span style='color:#FFA500'>" + String(m_neighbors) + "</span>"
-			   + "<br> Benign neighbors: " + String(b_neighbors) 
+			   + "<br> Benign neighbors: <span style='color:#0000FF'>" + String(b_neighbors) + "</span>"
 			   + "<br> Classification: " + classification);
 	}
 	
