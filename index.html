@@ -62,7 +62,7 @@
 	function make_legend(){
 		window.legend = d3.select("body").append("div").style("position", "absolute").style("visibility", "visible")
 			.style("left", "500px").style("top", "650px").style("border", "solid").style("border-width", "1px")
-			.style("border-radius", "5px").style("padding", "5px").style("font-family", "Verdana").style("font-size", "12");
+			.style("border-radius", "5px").style("padding", "5px").style("font-family", "Verdana").style("font-size", "14");
 		window.legend_circle1 = d3.select('svg').append('circle').attr("cx", "507").attr("cy", "421").attr("r", "5");
 		window.legend_circle2 = d3.select('svg').append('circle').attr("cx", "507").attr("cy", "436").attr("r", "5");
 		legend.html("&nbsp&nbsp&nbsp&nbsp Malignant Tumor<br>&nbsp&nbsp&nbsp&nbsp Benign Tumor");
@@ -142,7 +142,7 @@
 				k = d3.format('.1f')(val); 
 				if (point_selected) {k_nearest(); display_votes();}
 			});
-		d3.select('svg').append('g').attr('transform', 'translate(550,80)').call(slider);
+		d3.select('svg').append('g').attr('transform', 'translate(500,100)').call(slider);
 		
 		make_background();
 		
@@ -173,7 +173,7 @@
 		//display votes, hidden for now
 		window.votes = d3.select("body").append("div").style("position", "absolute").style("visibility", "hidden")
 			.style("left", "500px").style("top", "450px").style("border", "solid").style("border-width", "1px")
-			.style("border-radius", "5px").style("padding", "5px").style("font-family", "Verdana").style("font-size", "12");
+			.style("border-radius", "5px").style("padding", "5px").style("font-family", "Verdana").style("font-size", "14");
 		
 		
         
