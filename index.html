@@ -73,9 +73,8 @@
 		tooltip.html("Coordinates: (" + d['pc1'].slice(0,5) + ", " + d['pc2'].slice(0,5) + ") <br> Classification: " + classification(d['diagnosis']));
 	}
 	
-	function place_new_point(x, y){
-		var new_point = d3.select('svg').append("circle").attr("cx", x).attr("cy", y).attr("r", "3")
-			.style("fill", "black").style("fill-opacity", ".75");
+	function move_new_point(x, y){
+		new_point.attr("cx", x).attr("cy", y).style("fill-opacity", "1");
 		var actual_x = (parseFloat(x) - 50.0) / 18.0;
 		var actual_y = (parseFloat(y) - 476.0) / (-18.0);
 		
@@ -91,7 +90,7 @@
 		window.background = d3.select('svg').append("g").append('rect').attr("width","432").attr("height","396")
 			.attr("x", "50").attr("y", "80").style("fill-opacity", "0").on("click", function(){
 			var coords = d3.mouse(this);
-			place_new_point(coords[0], coords[1]);
+			move_new_point(coords[0], coords[1]);
 		});
 	}
 	
@@ -132,6 +131,10 @@
 			.attr("cy",function(d){return 396-18*(parseFloat(d.pc2)+8);})
 			.style("fill", function(d){if (d.diagnosis=="B") {return "blue";} else {return "orange";}})
 			.attr("r", 3).style("fill-opacity", ".5");
+		
+		//make new point, hidden for now
+		var new_point = d3.select('svg').append("circle").attr("cx", 0).attr("cy", 0).attr("r", "3")
+			.style("fill", "black").style("fill-opacity", "0");
 		
 		//tooltip
 		window.tooltip = d3.select("body").append("div").attr("class", "tooltip").style("position", "absolute")
