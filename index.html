@@ -75,7 +75,7 @@
 		if (m_neighbors >= b_neighbors) {classification = "Malignant";}
 		else {classification = "Benign";}
 		votes.html("New point: (" + String(actual_x).slice(0,5) + ", " + String(actual_y).slice(0,5) + ")"
-			   + "<br> Malignant neighbors: " + String(m_neighbors) 
+			   + "<br> Malignant neighbors: <span style='color:#FFA500'>" + String(m_neighbors) + "</span>"
 			   + "<br> Benign neighbors: " + String(b_neighbors) 
 			   + "<br> Classification: " + classification);
 	}
