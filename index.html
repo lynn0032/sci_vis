@@ -76,8 +76,8 @@
 	function place_new_point(x, y){
 		var new_point = d3.select('svg').append("circle").attr("cx", x).attr("cy", y).attr("r", "3")
 			.style("fill", "black").style("fill-opacity", ".75");
-		var actual_x = parseFloat(x) / 18.0 - 6.0;
-		var actual_y = (parseFloat(y) - 396.0) / (-18.0) - 8.0;
+		var actual_x = (parseFloat(x) - 50.0) / 18.0 - 6.0;
+		var actual_y = (parseFloat(y) - 476.0) / (-18.0) - 8.0;
 		d3.select('svg').append("text").text(String(distance(actual_x, actual_y, 0.0, 0.0))).attr('transform', 'translate(50,50)');
 	}
 	
