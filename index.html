@@ -27,6 +27,7 @@
 	
 <script>
 	var k = '3';
+	var point_selected = false;
 	
 	function draw_axes(){
 		//code in this function is adapted from: https://www.tutorialsteacher.com/d3js/axes-in-d3
@@ -74,6 +75,7 @@
 	}
 	
 	function move_new_point(x, y){
+		point_selected = true;
 		new_point.attr("cx", x).attr("cy", y).style("fill-opacity", "1");
 		var actual_x = (parseFloat(x) - 50.0) / 18.0;
 		var actual_y = (parseFloat(y) - 476.0) / (-18.0);
@@ -121,7 +123,8 @@
 		var slider = d3.sliderHorizontal().min(1).max(569).step(1).width(300).ticks(0).displayValue(true).value(1)
 			.on('onchange', function(val){ 
 				k = d3.format('.1f')(val); 
-				k_nearest();});
+				if (point_selected) {k_nearest();}
+			});
 		d3.select('svg').append('g').attr('transform', 'translate(550,80)').call(slider);
 		
 		make_background();
