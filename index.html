@@ -79,7 +79,7 @@
 		var actual_x = (parseFloat(x) - 50.0) / 18.0;
 		var actual_y = (parseFloat(y) - 476.0) / (-18.0);
 		
-		points.sort(function(a,b){
+		points = points.sort(function(a,b){
 			return distance(parseFloat(a.pc1) + 6.0, parseFloat(a.pc2) + 8.0, actual_x, actual_y) - distance(parseFloat(b.pc1) + 6.0, parseFloat(b.pc2) + 8.0, actual_x, actual_y);
 		});
 		k_nearest();
