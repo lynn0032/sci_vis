@@ -78,6 +78,11 @@
 			.style("fill", "black").style("fill-opacity", ".75");
 		var actual_x = (parseFloat(x) - 50.0) / 18.0;
 		var actual_y = (parseFloat(y) - 476.0) / (-18.0);
+		
+		points.sort(function(a,b){
+			return distance(parseFloat(a.pc1), parseFloat(a.pc2), actual_x, actual_y) - distance(parseFloat(b.pc1), parseFloat(b.pc2), actual_x, actual_y);
+		}
+		
 		d3.select('svg').append("text").text(String(actual_x) + " " + String(actual_y)).attr('transform', 'translate(50,50)');
 	}
 	
