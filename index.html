@@ -8,14 +8,20 @@
 
 <body onload = 'init()'>
 	<h1> Understanding the \(k\)-Nearest Neighbors Classification Algorithm </h1>
-	<p> The \(k\)-nearest neighbor algorithm blah blah blah </p>
-	<p> Given a set a labeled datapoints and a new point to classify,
-		<ul>
-			<li>Find the \(k\) labeled data points which are closest to the new point</li>
-			<li>Those \(k\) labeled data points "vote" on which label to give the new point</li>
-			<li>The new point is labeled with the most frequent label amongst the neighbors</li>
-	</ul></p>
-	<p> About the data breast cancer</p>
+	<p> The \(k\)-nearest neighbor algorithm is a machine learning classification algorithm. 
+		This means that the algorithm takes a dataset of labeled datapoints, and attempts to 
+		build a classifier that can correctly label new (or unseen) datapoints. The labels are categorical,
+		so there are a finite number of possibilities for the labels.</p>
+	<p> The way that \(k\)-nearest neighbors classifies new data points is by looking for the \(k\) points from 
+		the labeled dataset which are closest to the new datapoint (hence the name, "\(k\) nearest neighbors").
+		The classifier counts the number of occurrences of each label among the \(k\) neighbors, and that
+		label is assigned to the new datapoint. You can think of this as the neighbors each "voting" on what they
+		think the new label should be.
+	</p>
+	<p> In the interactive visualization below, you can explore the \(k\)-nearest neighbors algorithm to see how it works.
+		Try selecting different data points and different values for \(k\). What value of \(k\) do you think would be
+		the best choice for this dataset?
+	</p>
   
   <svg width=960 height=500>
 	  
