@@ -168,7 +168,8 @@
 		points.on("mouseover", function(d){
 			d3.select(this).style("stroke", "black").style("stroke-opacity", "1");
 			tooltip_text(d);
-			tooltip.style("visibility", "visible").style("left", (d3.event.pageX) + "px").style("top", (d3.event.pageY) + "px");});
+			tooltip.style("visibility", "visible").style("left", (d3.event.pageX) + "px").style("top", (d3.event.pageY) + "px")
+				.style("background-opacity", "1");});
 		points.on("mouseout", function(){
 			d3.select(this).style("stroke-opacity", "0");
 			tooltip.style("visibility", "hidden");});
