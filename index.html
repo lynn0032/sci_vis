@@ -141,7 +141,7 @@
 		var slider = d3.sliderHorizontal().min(1).max(569).step(1).width(300).ticks(0).displayValue(true).value(1)
 			.on('onchange', function(val){ 
 				k = d3.format('.1f')(val); 
-				if (point_selected) {k_nearest();}
+				if (point_selected) {k_nearest(); display_votes();}
 			});
 		d3.select('svg').append('g').attr('transform', 'translate(550,80)').call(slider);
 		
