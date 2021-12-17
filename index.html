@@ -103,9 +103,12 @@
 	
 	function k_nearest(){
 		//assume points are already sorted
-		points.style("fill-opacity", function (d,i) {
+		points.style("stroke", "black").style("fill-opacity", function (d,i) {
 			if (i < k) {return .75;}
-			else {return .25}
+			else {return .1}
+		}).style("stroke-opacity", function (d,i){
+			if (i < k) {return 1;}
+			else {return 0;}
 		});
 		
 	}
