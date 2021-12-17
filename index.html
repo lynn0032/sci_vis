@@ -74,7 +74,7 @@
 		votes.style("visibility", "visible")
 		if (m_neighbors >= b_neighbors) {classification = "<span style='color:#FFA500'>Malignant</span>";}
 		else {classification = "<span style='color:#0000FF'>Benign</span>";}
-		votes.html("k = " + str(k) + "(number of neighbors)"
+		votes.html("k = " + String(k) + "(number of neighbors)"
 			   + "<br> New point: (" + String(actual_x).slice(0,5) + ", " + String(actual_y).slice(0,5) + ")"
 			   + "<br> Malignant neighbors: <span style='color:#FFA500'>" + String(m_neighbors) + "</span>"
 			   + "<br> Benign neighbors: <span style='color:#0000FF'>" + String(b_neighbors) + "</span>"
@@ -171,7 +171,7 @@
 		d3.select("body").append("div").style("position", "absolute").style("left", "500px").style("top", "300px")
 			.style("font-family", "Verdana").style("font-size", "14")
 			.html("Select value of k:");
-		d3.select("body").append("div").style("position", "absolute").style("left", "500px").style("top", "450px")
+		d3.select("body").append("div").style("position", "absolute").style("left", "500px").style("top", "425px")
 			.style("font-family", "Verdana").style("font-size", "14")
 			.html("Click on the plot to place and classify a new datapoint.");
 		
@@ -181,7 +181,7 @@
 		
 		//display votes, hidden for now
 		window.votes = d3.select("body").append("div").style("position", "absolute").style("visibility", "hidden")
-			.style("left", "500px").style("top", "500px").style("border", "solid").style("border-width", "1px")
+			.style("left", "500px").style("top", "525px").style("border", "solid").style("border-width", "1px")
 			.style("border-radius", "5px").style("padding", "5px").style("font-family", "Verdana").style("font-size", "14");
 		
 		
