@@ -145,7 +145,7 @@
 				k = d3.format('.1f')(val); 
 				if (point_selected) {k_nearest(); display_votes();}
 			});
-		d3.select('svg').append('g').attr('transform', 'translate(500,100)').call(slider);
+		d3.select('svg').append('g').attr('transform', 'translate(500,150)').call(slider);
 		
 		make_background();
 		
@@ -174,7 +174,7 @@
 			.style("fill", "black").style("fill-opacity", "0");
 		
 		//display votes, hidden for now
-		d3.select("body").append("div").style("position", "absolute").style("left", "550px").style("top", "400px")
+		d3.select("body").append("div").style("position", "absolute").style("left", "500px").style("top", "400px")
 			.style("font-family", "Verdana").style("font-size", "14")
 			.html("Click on the plot to place and classify a new datapoint");
 		window.votes = d3.select("body").append("div").style("position", "absolute").style("visibility", "hidden")
