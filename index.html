@@ -73,9 +73,16 @@
 		tooltip.html("Coordinates: (" + d['pc1'].slice(0,5) + ", " + d['pc2'].slice(0,5) + ") <br> Classification: " + classification(d['diagnosis']));
 	}
 	
+	function place_new_point(x, y){
+		var new_point = d3.select('svg').append("circle").attr("cx", x).attr("cy", y).attr("r", ".5");
+	}
+	
 	function make_background(){
 		window.background = d3.select('svg').append("g").append('rect').attr("width","432").attr("height","396")
-			.attr("x", "50").attr("y", "80").style("fill-opacity", "0");
+			.attr("x", "50").attr("y", "80").style("fill-opacity", "0").on("click", function(){
+			var coords = d3.mouse(this);
+			place_new_point(coords[0], coords[1]);
+		});
 	}
 	
 	async function init(){
