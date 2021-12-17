@@ -31,6 +31,8 @@
 	var m_neighbors = '0';
 	var b_neighbors = '0';
 	var classification = '';
+	var actual_x = '0';
+	var actual_y = '0';
 	
 	function draw_axes(){
 		//code in this function is adapted from: https://www.tutorialsteacher.com/d3js/axes-in-d3
@@ -68,7 +70,7 @@
 		legend_circle2.style("fill", "blue").style("fill-opacity", ".5");
 	}
 	
-	function display_votes(actual_x, actual_y){
+	function display_votes(){
 		votes.style("visibility", "visible")
 		if (m_neighbors >= b_neighbors) {classification = "Malignant";}
 		else {classification = "Benign";}
@@ -90,14 +92,14 @@
 	function move_new_point(x, y){
 		point_selected = true;
 		new_point.attr("cx", x).attr("cy", y).style("fill-opacity", "1");
-		var actual_x = (parseFloat(x) - 50.0) / 18.0;
-		var actual_y = (parseFloat(y) - 476.0) / (-18.0);
+		actual_x = (parseFloat(x) - 50.0) / 18.0;
+		actual_y = (parseFloat(y) - 476.0) / (-18.0);
 		
 		points = points.sort(function(a,b){
 			return distance(parseFloat(a.pc1) + 6.0, parseFloat(a.pc2) + 8.0, actual_x, actual_y) - distance(parseFloat(b.pc1) + 6.0, parseFloat(b.pc2) + 8.0, actual_x, actual_y);
 		});
 		k_nearest();
-		display_votes(actual_x, actual_y);
+		display_votes();
 	}
 	
 	function make_background(){
