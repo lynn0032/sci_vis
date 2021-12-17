@@ -200,7 +200,7 @@
 			.style("border-radius", "5px").style("padding", "5px").style("font-family", "Verdana").style("font-size", "14");
 		
 		//reset button, hidden for now
-		window.reset_button = d3.select('svg').append("g").style("cursor", "pointer")
+		window.reset_button = d3.select('svg').append("g").style("cursor", "pointer");
 		window.reset_rect = reset_button.append("rect").attr("x","500").attr("y","575").attr("width","30").attr("height","20")
 			.style("stroke-width","1").style("stroke","black").style("fill-opacity",".5").attr("fill","url(#gray_gradient)");
 		window.reset_text = reset_button.append("text").attr("x","502").attr("y","590").attr("font-family","Verdana")
