@@ -30,6 +30,7 @@
 	var point_selected = false;
 	var m_neighbors = '0';
 	var b_neighbors = '0';
+	var classification = '';
 	
 	function draw_axes(){
 		//code in this function is adapted from: https://www.tutorialsteacher.com/d3js/axes-in-d3
@@ -71,7 +72,9 @@
 		window.votes = d3.select("body").append("div").style("position", "absolute").style("visibility", "visible")
 			.style("left", "500px").style("top", "450px").style("border", "solid").style("border-width", "1px")
 			.style("border-radius", "5px").style("padding", "5px").style("font-family", "Verdana").style("font-size", "11");
-		votes.html("Hello, world!" + String(m_neighbors) + " " + String(b_neighbors));
+		if (m_neighbors > b_neighbors) {classification = "Malignant";}
+		else {classification = "Benign";}
+		votes.html("Hello, world!" + String(m_neighbors) + " " + String(b_neighbors) + " " + classification);
 	}
 	
 	function classification(letter){
