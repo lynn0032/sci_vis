@@ -24,6 +24,20 @@
 	</p>
   
   <svg width=960 height=500>
+	  <defs>
+      </linearGradient>
+	<linearGradient id="gray_gradient" x1="0" x2="0" y1="0" y2="1">
+        <stop offset="0%" stop-color="gray"/>
+	<stop offset="25%" stop-color="white"/>      
+        <stop offset="100%" stop-color="gray"/>
+      </linearGradient>
+	<style type="text/css"><![CDATA[
+        #rect1 { fill: url(#red_gradient); }
+        .stop1 { stop-color: red; }
+        .stop2 { stop-color: white; stop-opacity: 0; }
+        .stop3 { stop-color: red; }
+      ]]></style>
+	  </defs>
 	  
 	  <rect x=10 y=10 width=350 height=40 style="stroke-width:1;stroke:black;fill-opacity:.1"></rect>
 	  <text x=25 y=40 font-family="Verdana" font-size="20" fill="black"> Visualizing k-Nearest Neighbors </text>
@@ -186,10 +200,10 @@
 			.style("border-radius", "5px").style("padding", "5px").style("font-family", "Verdana").style("font-size", "14");
 		
 		//reset button, hidden for now
-		window.reset_button = d3.select("body").append("div").style("position", "absolute").style("visibility", "hidden")
-			.style("left", "500px").style("top", "575px").style("border", "solid").style("border-width", "1px")
-			.style("border-radius", "5px").style("padding", "5px").style("font-family", "Verdana").style("font-size", "14")
-			.html("Reset");
+		window.reset_button = d3.select("body").append("rect").attr("x","500").attr("y","575").attr("width","30").attr("height","20")
+			.style("stroke-width","1").style("stroke","black").style("fill-opacity",".5").attr("fill","url(#gray_gradient)");
+		window.reset_text = d3.select("body").append("text").attr("x","502").attr("y","590").attr("font-family","Verdana")
+			.attr("font-size","14").attr("fill","black").html("Reset");
 		
 		//tooltip
 		window.tooltip = d3.select("body").append("div").attr("class", "tooltip").style("position", "absolute")
