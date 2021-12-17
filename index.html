@@ -80,13 +80,13 @@
 			   + "<br> Classification: " + classification);
 	}
 	
-	function classification(letter){
+	function full_classification(letter){
 		if (letter == "M") {return "Malignant";}
 		else {return "Benign";}
 	}
 	
 	function tooltip_text(d){
-		tooltip.html("Coordinates: (" + d['pc1'].slice(0,5) + ", " + d['pc2'].slice(0,5) + ") <br> Classification: " + classification(d['diagnosis']));
+		tooltip.html("Coordinates: (" + d['pc1'].slice(0,5) + ", " + d['pc2'].slice(0,5) + ") <br> Classification: " + full_classification(d['diagnosis']));
 	}
 	
 	function move_new_point(x, y){
