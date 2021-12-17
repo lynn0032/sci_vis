@@ -191,9 +191,10 @@
 			.style("border-radius", "5px").style("padding", "5px").style("font-family", "Verdana").style("font-size", "14");
 		
 		//reset button, hidden for now
-		window.reset_button = d3.select("body").append("div").append("rect").attr("x", "500").attr("y", "525")
-			.attr("width", "100").attr("height", 30).style("stroke-width", "1").style("stroke", "black")
-			.style("fill-opacity", "0");
+		window.reset_button = d3.select("body").append("div").style("position", "absolute").style("visibility", "hidden")
+			.style("left", "500px").style("top", "525px").style("border", "solid").style("border-width", "1px")
+			.style("border-radius", "5px").style("padding", "5px").style("font-family", "Verdana").style("font-size", "14")
+			.html("Reset new point");
 		
 		
         
