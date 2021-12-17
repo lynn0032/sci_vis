@@ -73,10 +73,16 @@
 		tooltip.html("Coordinates: (" + d['pc1'].slice(0,5) + ", " + d['pc2'].slice(0,5) + ") <br> Classification: " + classification(d['diagnosis']));
 	}
 	
+	function make_background(){
+		window.background = d3.select('svg').append("g").append('rect').attr("width","480").attr("height","440")
+			.attr("x", "50").attr("y", "80").attr("fill", "red");
+	}
+	
 	async function init(){
 		
 		draw_axes();
 		make_legend();
+		make_background();
 		
 		//slider
 		var slider = d3.sliderHorizontal().min(1).max(569).step(1).width(300).ticks(0).displayValue(true).value(1)
