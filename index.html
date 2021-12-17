@@ -161,18 +161,7 @@
 			.style("fill", function(d){if (d.diagnosis=="B") {return "blue";} else {return "orange";}})
 			.attr("r", 3).style("fill-opacity", ".5");
 		
-		//tooltip
-		window.tooltip = d3.select("body").append("div").attr("class", "tooltip").style("position", "absolute")
-			.style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px")
-			.style("font-family", "Verdana").style("border-radius", "5px").style("padding", "10px");
-		points.on("mouseover", function(d){
-			d3.select(this).style("stroke", "black").style("stroke-opacity", "1");
-			tooltip_text(d);
-			tooltip.style("visibility", "visible").style("left", (d3.event.pageX) + "px").style("top", (d3.event.pageY) + "px")
-				.style("background-opacity", "1");});
-		points.on("mouseout", function(){
-			d3.select(this).style("stroke-opacity", "0");
-			tooltip.style("visibility", "hidden");});
+		
 		
 		//Instructions
 		d3.select("body").append("div").style("position", "absolute").style("left", "500px").style("top", "300px")
@@ -196,6 +185,19 @@
 			.style("left", "500px").style("top", "525px").style("border", "solid").style("border-width", "1px")
 			.style("border-radius", "5px").style("padding", "5px").style("font-family", "Verdana").style("font-size", "14")
 			.html("Reset new point");
+		
+		//tooltip
+		window.tooltip = d3.select("body").append("div").attr("class", "tooltip").style("position", "absolute")
+			.style("visibility", "hidden").style("background-color", "white").style("border", "solid").style("border-width", "1px")
+			.style("font-family", "Verdana").style("border-radius", "5px").style("padding", "10px");
+		points.on("mouseover", function(d){
+			d3.select(this).style("stroke", "black").style("stroke-opacity", "1");
+			tooltip_text(d);
+			tooltip.style("visibility", "visible").style("left", (d3.event.pageX) + "px").style("top", (d3.event.pageY) + "px")
+				.style("background-opacity", "1");});
+		points.on("mouseout", function(){
+			d3.select(this).style("stroke-opacity", "0");
+			tooltip.style("visibility", "hidden");});
 		
 		
         
