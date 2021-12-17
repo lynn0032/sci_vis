@@ -75,7 +75,7 @@
 	
 	function place_new_point(x, y){
 		var new_point = d3.select('svg').append("circle").attr("cx", x).attr("cy", y).attr("r", "3")
-			.style("fill", "black").style("fill-opacity", ".75");
+			.style("fill", "black").style("fill-opacity", ".75").text(String(distance(x,y,0,0)));
 	}
 	
 	function make_background(){
@@ -84,6 +84,16 @@
 			var coords = d3.mouse(this);
 			place_new_point(coords[0], coords[1]);
 		});
+	}
+	
+	function distance(x1, y1, x2, y2){
+		let x = parseFloat(x2) - parseFloat(x1);
+		let y = parseFloat(y2) - parseFloat(y1);
+		return Math.sqrt(x*x + y*y);
+	}
+	
+	function k_nearest(x, y){
+		char nearest = [
 	}
 	
 	async function init(){
