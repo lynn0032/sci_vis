@@ -75,7 +75,7 @@
 	
 	function make_background(){
 		window.background = d3.select('svg').append("g").append('rect').attr("width","432").attr("height","396")
-			.attr("x", "50").attr("y", "80").attr("fill", "red");
+			.attr("x", "50").attr("y", "80").style("fill-opacity", "0");
 	}
 	
 	async function init(){
