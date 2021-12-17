@@ -68,12 +68,12 @@
 	}
 	
 	function display_votes(actual_x, actual_y){
-		window.legend = d3.select("body").append("div").style("position", "absolute").style("visibility", "visible")
+		window.votes = d3.select("body").append("div").style("position", "absolute").style("visibility", "visible")
 			.style("left", "500px").style("top", "450px").style("border", "solid").style("border-width", "1px")
 			.style("border-radius", "5px").style("padding", "5px").style("font-family", "Verdana").style("font-size", "11");
-		if (m_neighbors > n_neighbors){ var classification = "Malignant"; }
-		else{ var classification = "Benign"; }
-		legend.html("New point: (" + String(actual_x) + ", " + String(actual_y) + ")<br> Benign Neighbors: " + String(b_neighbors) + "<br> Malignant Neighbors: " + String(m_neighbors) + "<br> Classification: " + classifation);
+		if (m_neighbors > n_neighbors) { var classification = "Malignant"; }
+		else { var classification = "Benign"; }
+		votes.html("New point: (" + String(actual_x) + ", " + String(actual_y) + ")<br> Benign Neighbors: " + String(b_neighbors) + "<br> Malignant Neighbors: " + String(m_neighbors) + "<br> Classification: " + classifation);
 	}
 	
 	function classification(letter){
