@@ -18,6 +18,16 @@
 		label is assigned to the new datapoint. You can think of this as the neighbors each "voting" on what they
 		think the new label should be.
 	</p>
+	<p> <b> About the data: </b> The dataset used for the visualization below is from the Wisconsin Breast Cancer dataset, 
+		available <a href="https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+(diagnostic)">here</a>.
+		This dataset contains measurements of 569 tumors, along with their diagnosis as Benign or Malignant. The goal 
+		in working with this dataset is to use the measurements of the tumors to predict the diagnosis. In order to
+		create the visualization below, we used a dimensionality-reduction method called Principal Component Analysis (PCA)
+		to reduce the data to two features, which are plotted on the \(x\) and \(y\) axes below.
+		You can read more about PCA <a href="https://builtin.com/data-science/step-step-explanation-principal-component-analysis">here</a>.
+		Note that, for \(k\)-nearest neighbors, we would typically keep more than two components - here we are reducing to
+		two components so that we can visualize the algorithm more effectively.
+	</p>
 	<p> In the interactive visualization below, you can explore the \(k\)-nearest neighbors algorithm to see how it works.
 		Try selecting different data points and different values for \(k\). What value of \(k\) do you think would be
 		the best choice for this dataset?
