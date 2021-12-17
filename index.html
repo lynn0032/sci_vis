@@ -90,7 +90,6 @@
 		
 		draw_axes();
 		make_legend();
-		make_background();
 		
 		//slider
 		var slider = d3.sliderHorizontal().min(1).max(569).step(1).width(300).ticks(0).displayValue(true).value(1)
@@ -116,6 +115,8 @@
 		points.on("mouseout", function(){
 			d3.select(this).style("stroke-opacity", "0");
 			tooltip.style("visibility", "hidden");});
+		
+		make_background();
         
 	}
 	
