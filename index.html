@@ -72,9 +72,12 @@
 		window.votes = d3.select("body").append("div").style("position", "absolute").style("visibility", "visible")
 			.style("left", "500px").style("top", "450px").style("border", "solid").style("border-width", "1px")
 			.style("border-radius", "5px").style("padding", "5px").style("font-family", "Verdana").style("font-size", "11");
-		if (m_neighbors > b_neighbors) {classification = "Malignant";}
+		if (m_neighbors >= b_neighbors) {classification = "Malignant";}
 		else {classification = "Benign";}
-		votes.html("Hello, world!" + String(m_neighbors) + " " + String(b_neighbors) + " " + classification);
+		votes.html("New point: (" + String(actual_x) + ", " + String(actual_y)
+			   + "<br> Malignant neighbors: " + String(m_neighbors) 
+			   + "<br> Benign neighbors: " + String(b_neighbors) 
+			   + "<br> Classifcation: " + classification);
 	}
 	
 	function classification(letter){
