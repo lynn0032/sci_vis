@@ -76,7 +76,9 @@
 	function place_new_point(x, y){
 		var new_point = d3.select('svg').append("circle").attr("cx", x).attr("cy", y).attr("r", "3")
 			.style("fill", "black").style("fill-opacity", ".75");
-		d3.select('svg').append("text").text(String(distance(x, y, "0", "0"))).attr('transform', 'translate(50,50)');
+		var actual_x = parseFloat(x) / 18.0 - 6.0;
+		var actual_y = (parseFloat(y) - 396.0) / (-18.0) - 8.0;
+		d3.select('svg').append("text").text(String(distance(actual_x, actual_y, 0.0, 0.0))).attr('transform', 'translate(50,50)');
 	}
 	
 	function make_background(){
@@ -88,8 +90,8 @@
 	}
 	
 	function distance(x1, y1, x2, y2){
-		let x = parseFloat(x2) - parseFloat(x1);
-		let y = parseFloat(y2) - parseFloat(y1);
+		let x = x2 - x1;
+		let y = y2 - y1;
 		return Math.sqrt(x*x + y*y);
 	}
 	
