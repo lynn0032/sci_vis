@@ -92,15 +92,15 @@
 	function make_legend(){
 		d3.select("svg").append("rect").attr("x","500").attr("y","400").attr("width","100").attr("height","50")
 			.style("stroke-width", "1").style("stroke","black").style("fill-opacity","0");
-		d3.select("svg").append("text").attr("x","520").attr("y","425")
+		d3.select("svg").append("text").attr("x","520").attr("y","420")
 			.text("Malignant Tumor");
-		d3.select("svg").append("text").attr("x","520").attr("y","445")
+		d3.select("svg").append("text").attr("x","520").attr("y","440")
 			.text("Malignant Tumor");
 		/*window.legend = d3.select("body").append("div").style("position", "absolute").style("visibility", "visible")
 			.style("left", "500px").style("top", "650px").style("border", "solid").style("border-width", "1px")
 			.style("border-radius", "5px").style("padding", "5px").style("font-family", "Verdana").style("font-size", "14");*/
-		window.legend_circle1 = d3.select('svg').append('circle').attr("cx", "507").attr("cy", "426").attr("r", "5");
-		window.legend_circle2 = d3.select('svg').append('circle').attr("cx", "507").attr("cy", "441").attr("r", "5");
+		window.legend_circle1 = d3.select('svg').append('circle').attr("cx", "510").attr("cy", "415").attr("r", "5");
+		window.legend_circle2 = d3.select('svg').append('circle').attr("cx", "510").attr("cy", "435").attr("r", "5");
 		//legend.html("&nbsp&nbsp&nbsp&nbsp Malignant Tumor<br>&nbsp&nbsp&nbsp&nbsp Benign Tumor");
 		legend_circle1.style("fill", "orange").style("fill-opacity", ".75");
 		legend_circle2.style("fill", "blue").style("fill-opacity", ".75");
