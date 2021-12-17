@@ -109,6 +109,8 @@
 			.on('onchange', (val) => { k = d3.format('.1f')(val);});
 		d3.select('svg').append('g').attr('transform', 'translate(550,80)').call(slider);
 		
+		make_background();
+		
 		//plot data points
 		const data = await d3.csv("https://raw.githubusercontent.com/lynn0032/sci_vis/master/bc_data.csv");
 		window.points = d3.select('svg').append("g").attr("transform", "translate(50, 80)").selectAll('circle').data(data).enter().append('circle')
@@ -129,7 +131,7 @@
 			d3.select(this).style("stroke-opacity", "0");
 			tooltip.style("visibility", "hidden");});
 		
-		make_background();
+		
         
 	}
 	
