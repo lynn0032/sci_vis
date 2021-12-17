@@ -194,12 +194,10 @@
 		
 		
 		//Instructions
-		d3.select("body").append("div").style("position", "absolute").style("left", "500px").style("top", "300px")
-			.style("font-family", "Verdana").style("font-size", "14")
-			.html("Select value of k:");
-		d3.select("body").append("div").style("position", "absolute").style("left", "500px").style("top", "440px")
-			.style("font-family", "Verdana").style("font-size", "14")
-			.html("Click on the plot to place and classify a new datapoint.");
+		d3.select("svg").append("text").attr("x","500").attr("y","100")
+			.text("Select value of k:");
+		d3.select("svg").append("text").attr("x","500").attr("y","300")
+			.text("Click on the plot to place and classify a new datapoint.");
 		
 		//make new point, hidden for now
 		window.new_point = d3.select('svg').append("circle").attr("cx", 0).attr("cy", 0).attr("r", "3")
