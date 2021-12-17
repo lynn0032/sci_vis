@@ -194,9 +194,9 @@
 		
 		
 		//Instructions
-		d3.select("svg").append("text").attr("x","500").attr("y","70")
+		d3.select("svg").append("text").attr("x","500").attr("y","70").style("font-family", "Verdana").style("font-size", "14")
 			.text("Select value of k:");
-		d3.select("svg").append("text").attr("x","500").attr("y","150")
+		d3.select("svg").append("text").attr("x","500").attr("y","150").style("font-family", "Verdana").style("font-size", "14")
 			.text("Click on the plot to place and classify a new datapoint.");
 		
 		//make new point, hidden for now
@@ -205,7 +205,7 @@
 		
 		//display votes, hidden for now
 		window.votes = d3.select("body").append("div").style("position", "absolute").style("visibility", "hidden")
-			.style("left", "500px").style("top", "475px").style("border", "solid").style("border-width", "1px")
+			.style("left", "500px").style("top", "525px").style("border", "solid").style("border-width", "1px")
 			.style("border-radius", "5px").style("padding", "5px").style("font-family", "Verdana").style("font-size", "14");
 		
 		//tooltip
