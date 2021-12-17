@@ -83,8 +83,8 @@
 		window.legend = d3.select("body").append("div").style("position", "absolute").style("visibility", "visible")
 			.style("left", "500px").style("top", "650px").style("border", "solid").style("border-width", "1px")
 			.style("border-radius", "5px").style("padding", "5px").style("font-family", "Verdana").style("font-size", "14");
-		window.legend_circle1 = d3.select('svg').append('circle').attr("cx", "507").attr("cy", "421").attr("r", "5");
-		window.legend_circle2 = d3.select('svg').append('circle').attr("cx", "507").attr("cy", "436").attr("r", "5");
+		window.legend_circle1 = d3.select('svg').append('circle').attr("cx", "507").attr("cy", "426").attr("r", "5");
+		window.legend_circle2 = d3.select('svg').append('circle').attr("cx", "507").attr("cy", "441").attr("r", "5");
 		legend.html("&nbsp&nbsp&nbsp&nbsp Malignant Tumor<br>&nbsp&nbsp&nbsp&nbsp Benign Tumor");
 		legend_circle1.style("fill", "orange").style("fill-opacity", ".75");
 		legend_circle2.style("fill", "blue").style("fill-opacity", ".75");
@@ -178,10 +178,10 @@
 		
 		
 		//Instructions
-		d3.select("body").append("div").style("position", "absolute").style("left", "500px").style("top", "315px")
+		d3.select("body").append("div").style("position", "absolute").style("left", "500px").style("top", "300px")
 			.style("font-family", "Verdana").style("font-size", "14")
 			.html("Select value of k:");
-		d3.select("body").append("div").style("position", "absolute").style("left", "500px").style("top", "425px")
+		d3.select("body").append("div").style("position", "absolute").style("left", "500px").style("top", "440px")
 			.style("font-family", "Verdana").style("font-size", "14")
 			.html("Click on the plot to place and classify a new datapoint.");
 		
